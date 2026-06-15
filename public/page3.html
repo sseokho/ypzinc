@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no, email=no, address=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>영풍안전교육관리시스템</title>
+  <link type="text/css" rel="stylesheet" href="././resource/css/base.css">
+
+
+</head>
+
+<body>
+  <div id="wrap">
+    <header class="header main">
+      <div class="inner">
+        <div class="head-logo">
+          <a href="#none"><img src="./././resource/image/logo-yellow.svg" alt=""></a>
+        </div>
+        <div class="btn-wrap">
+          <button type="button" class="btn btn-font size-14 fw-500"><span class="default">큰글씨</span><span
+              class="active">기본글씨</span></button>
+        </div>
+      </div>
+    </header>
+    <div class="content">
+      <div class="inner">
+        <div class="tit-wrap">
+          <p class="txt size-36 fw-700 ta-c">2026<br> 상반기 정기교육</p>
+        </div>
+        <!-- 인증번호 틀렸을 때 multi-box에 expire 클래스 추가 -->
+        <div class="multi-box icon">
+          <div class="icon-wrap">
+            <span><img src="./resource/image/icon-auth.svg"></span>
+          </div>
+          <div class="txt-wrap">
+            <!--
+            1. 출결 가능 시간 보다 빠를 시
+            아직 출결 체크를 하실 수 없습니다.<br>
+            출결은 00시 00분 부터 하실 수 있습니다.
+
+            2. 출결 가능 시간 보다 늦을 시
+            출결 체크하실 수 있는 시간을 초과 하였습니다.<br>
+            출결 시간은 00시 00분 까지입니다.
+
+            3. 이수 가능 시간 보다 늦을 시
+            이수 가능시간을 초과하였습니다.<br>
+            이수 시간은 00시 00분 까지입니다.
+
+            4. IP, GPS가 다를 시
+            교육 지정 위치에서 벗어났습니다.<br>
+            해당 교육장에서 다시 시도 바랍니다.
+            -->
+            <p class="txt size-18 fw-400 ta-c">교육 지정 위치에서 벗어났습니다.<br>
+            해당 교육장에서 다시 시도 바랍니다.</p>
+          </div>
+        </div>
+        <div class="btn-wrap">
+          <button class="btn btn-yellow h-54 w-full size-20">돌아가기</button>
+        </div>
+        <!-- 현재 기준 삭제
+        <div class="tip-box">
+          <p class="txt size-14 fw-400 ta-c">본인 정보가 다를 시, 관리자에게 말씀해 주세요.</p>
+        </div>
+        -->
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+
+<script type="text/javascript" src="././resource/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="././resource/js/common.js"></script>
+
+
+</html>

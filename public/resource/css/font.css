@@ -1,0 +1,83 @@
+@charset "utf-8";
+
+@font-face {
+	font-family: 'GyeonggiBatang';
+	font-weight: normal;
+	font-display: swap;
+	src: url('../font/GyeonggiBatang-Bold.otf') format('woff');
+}
+
+
+@font-face {
+	font-family: 'GyeonggiBatang';
+	font-weight: normal;
+	font-display: swap;
+	src: url('../font/GyeonggiBatang-Regular.otf') format('woff');
+}
+
+@font-face {
+	font-family: 'PretendardGOV';
+	font-weight: 900;
+	font-display: swap;
+	src: url('../font/PretendardGOV-Black.woff') format('woff');;
+}
+
+
+@font-face {
+	font-family: 'PretendardGOV';
+	font-weight: 800;
+	font-display: swap;
+	src: url('../font/PretendardGOV-ExtraBold.woff') format('woff');;
+}
+
+@font-face {
+	font-family: 'PretendardGOV';
+	font-weight: 700;
+	font-display: swap;
+	src: url('../font/PretendardGOV-Bold.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'PretendardGOV';
+	font-weight: 600;
+	font-display: swap;
+	src:url('../font/PretendardGOV-SemiBold.woff') format('woff');;
+}
+
+@font-face {
+	font-family: 'PretendardGOV';
+	font-weight: 500;
+	font-display: swap;
+	src: url('../font/PretendardGOV-Medium.woff') format('woff');;
+}
+
+@font-face {
+	font-family: 'PretendardGOV';
+	font-weight: 400;
+	font-display: swap;
+	src: url('../font/PretendardGOV-Regular.woff') format('woff');;
+}
+
+@font-face {
+	font-family: 'PretendardGOV';
+	font-weight: 300;
+	font-display: swap;
+	src: url('../font/PretendardGOV-Light.woff') format('woff');;
+}
+
+@font-face {
+	font-family: 'PretendardGOV';
+	font-weight: 200;
+	font-display: swap;
+	src: url('../font/PretendardGOV-ExtraLight.woff') format('woff');;
+}
+
+@font-face {
+	font-family: 'PretendardGOV';
+	font-weight: 100;
+	font-display: swap;
+	src: url('../font/PretendardGOV-Thin.woff') format('woff');;
+}
+
+
+

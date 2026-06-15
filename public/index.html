@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>영풍안전교육관리시스템</title>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<!-- favicon -->
+	<link rel="icon" href="./dist/assets/images/common/favicon.ico" type="image/x-icon" />
+	<!-- //favicon -->
+
+	<!-- style -->
+	<style>
+	body {
+	margin: 0;
+	}
+
+	
+	.is-emphasis {
+	font-weight: 700;
+	color: #ff706e;
+	}
+
+	.index-wrap {
+	box-sizing: border-box;
+	min-width: 1600px;
+	padding: 20px;
+	}
+
+	.index-title {
+	font-size: 30px;
+	line-height: 40px;
+	margin: 0 0 20px;
+	}
+
+	.index-links:before {
+	content: '';
+	display: table;
+	}
+
+	.index-links__inner {
+	margin: -10px 0 0 -10px;
+	}
+
+	.index-links__inner:after {
+	content: '';
+	display: table;
+	clear: both;
+	}
+
+	.index-links a {
+	display: block;
+	margin: 10px 0 0 10px;
+	float: left;
+	padding: 5px 15px;
+	font-size: 14px;
+	line-height: 20px;
+	color: #fff;
+	text-decoration: none;
+	border-radius: 5px;
+	background: #666;
+	}
+
+	.index-gnb {
+	margin: 20px 0;
+	}
+
+	.index-links{
+	overflow:hidden;
+	}
+	.index-links a{box-sizing:border-box;}
+	.index-links a:hover{
+	background-color:#333;
+	color:#fff;
+	}
+
+	.index-bottom {
+	position: fixed;
+	z-index: 1000;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	min-width: 1900px;
+	box-sizing: border-box;
+	padding: 10px 20px;
+	background: rgba(0, 0, 0, 0.4);}
+
+	.index-bottom a {
+	background-color: #066cb3;
+	}
+
+	.index-section {
+	border-radius: 5px;
+	background-color: #fff;
+	}
+
+	.index-section + .index-section {
+	margin-top: 20px;
+	}
+
+	.index-section--clicked {
+	-webkit-animation: index-section-clicked 0.8s linear;
+	animation: index-section-clicked 0.8s linear;
+	}
+
+	@-webkit-keyframes index-section-clicked {
+	0% {
+		background-color: rgba(255, 255, 255, 1);
+	}
+
+	30% {
+		background-color: rgba(255, 202, 222, 1);
+	}
+
+	70% {
+		background-color: rgba(255, 202, 222, 1);
+	}
+
+	100% {
+		background-color: rgba(255, 255, 255, 1);
+	}
+	}
+
+	@keyframes index-section-clicked {
+	0% {
+		background-color: rgba(255, 255, 255, 1);
+	}
+
+	30% {
+		background-color: rgba(255, 202, 222, 1);
+	}
+
+	70% {
+		background-color: rgba(255, 202, 222, 1);
+	}
+
+	100% {
+		background-color: rgba(255, 255, 255, 1);
+	}
+	}
+
+	.index-section__title {
+	margin: 0;
+	padding: 5px 15px;
+	font-size: 14px;
+	line-height: 20px;
+	color: #fff;
+	border-radius: 5px 5px 0 0;
+	background: #333;
+	}
+
+	.index-table > table {
+	width: 100%;
+	table-layout: fixed;
+	margin: 0;
+	padding: 0;
+	border-spacing: 0;
+	box-sizing: border-box;
+	}
+
+	.index-table > table > thead > tr > th,
+	.index-table > table > tbody > tr > th,
+	.index-table > table > tbody > tr > td {
+	box-sizing: border-box;
+	font-size: 12px;
+	line-height: 18px;
+	text-align: left;
+	padding: 5px 15px;
+	border: 0 solid #cdcdcd;
+	border-width: 0 1px 1px 0;
+	background: none;
+	word-break: keep-all;
+	word-wrap: break-word;
+	}
+
+	.index-table > table > tbody > tr:hover > th,
+	.index-table > table > tbody > tr:hover > td {
+	background-color: #f6f6f6;
+	}
+
+	.index-table > table > thead > tr > th:first-child,
+	.index-table > table > tbody > tr > th:first-child,
+	.index-table > table > tbody > tr > td:first-child {
+	border-left-width: 1px;
+	text-align:center;
+	}
+
+	.index-table > table > thead > tr > th {
+	border-top-width: 1px;
+	}
+
+	.index-table > table > thead > tr > th:nth-child(2),
+	.index-table > table > thead > tr > td:nth-child(2){
+	text-align:center;
+	}
+
+	.index-table > table > thead > tr > th,
+	.index-table > table > tbody > tr > th {
+	background-color: #e8e8e8;
+	}
+
+	.index-table > table > tbody > tr:last-child > td:first-child {
+	border-radius: 0 0 0 5px;
+	}
+
+	.index-table > table > tbody > tr:last-child > td:last-child {
+	border-radius: 0 0 5px 0;
+	}
+
+	.index-status {
+	display: inline-block;
+	vertical-align: top;
+	padding: 3px 8px;
+	margin: -3px 0;
+	background: #999;
+	color: #fff;
+	border-radius: 5px;
+	}
+
+	.index-status--ing {
+	background-color: #ffb01a;
+	}
+
+	.index-status--end {
+	background-color: #00a6a0;
+	}
+
+	.index-status--end2 {
+	font-size: 11px;
+	background-color: #008bce;
+	}
+
+	.index-status--moding {
+	background-color: #ff4594;
+	}
+	.index-share {
+	display: inline-block;
+	vertical-align: top;
+	padding: 3px 8px;
+	margin: -3px 0;
+	background: #999;
+	color: #fff;
+	border-radius: 5px;
+	}
+
+	.index-share--comp {
+	background-color: #ff6c6c;
+	}
+
+	.index-log {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	}
+
+	.index-log__item {
+	position: relative;
+	height:18px;
+	padding-left: 80px;
+	}
+
+	.index-log__item__date {
+	position: absolute;
+	top: 0;
+	left: 0;
+	}
+
+	.index-text {
+	margin-bottom: 20px;
+	}
+
+	.index-type {
+	color: #2b5cd9;
+	}
+
+	/* Path Preview Tooltip Styles */
+	.path-preview-wrapper {
+		position: relative;
+		display: inline-block;
+	}
+
+	.path-preview-tooltip {
+		position: absolute;
+		left: 100%;
+		top: 0;
+		margin-left: 10px;
+		width: 450px;
+		height: 450px;
+		background: #fff;
+		border: 2px solid #333;
+		border-radius: 5px;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+		z-index: 10000;
+		display: none;
+		overflow: hidden;
+		pointer-events: none;
+	}
+
+	.path-preview-tooltip.active {
+		display: block;
+	}
+
+	.path-preview-tooltip iframe {
+		width: 100%;
+		height: 100%;
+		border: none;
+		transform: scale(0.45);
+		transform-origin: top left;
+		pointer-events: none;
+	}
+
+	.path-preview-tooltip__container {
+		width: 1000px;
+		height: 1000px;
+		overflow: hidden;
+		position: relative;
+	}
+
+	.path-preview-tooltip__loading {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		color: #666;
+		font-size: 12px;
+	}
+	</style>
+	<!-- //style -->
+</head>
+
+<body>
+	<div class="index-wrap">
+		<h1 class="index-title"></h1>
+		<div class="index-gnb">
+		<div class="index-links">
+			<a href="././guide-component.html" target="_blank">컴포넌트 가이드</a>
+		</div>
+		</div>
+		<div class="index-bottom">
+		<div class="index-links">
+			<div class="index-links__inner" id="nav"></div>
+		</div>
+		</div>
+
+		<!--
+		<div class="index-text">기타 문구</div>
+		-->
+
+		<div class="index-datas" id="indexTable"></div>
+	</div>
+
+	<div class="index-fake-botttom"></div>
+
+	<!-- script -->
+	<script type="text/javascript" src="resource/js/jquery-1.12.4.min.js"></script>
+	<script>
+		var title = '영풍안전교육관리시스템';
+		var tableData = [
+			/*
+			{
+			depth1: '',
+			data: [
+				{
+				id: '',
+				depth2: '',
+				depth3: '',
+				depth5: '',
+				depth6: '',
+				path: '',
+				status: 'end, end, end2, except',
+				create: '20xx.xx.xx',
+				update: '',
+				log: [
+					//{ date: '', text: '', },
+				],
+				},
+			],
+			},
+			*/
+			{
+				depth1: '페이지',
+				data: [
+					{
+						id:'',
+						depth1: '인증홈',
+						depth2: '',
+						depth3: '',
+						path: 'page1.html',
+						status: 'end',
+						create: '',
+						log: [/*{ date: '2023.04.06', text: '반응형 작업중' }*/],
+					},
+					{
+						id:'',
+						depth1: '인증오류&인증번호',
+						depth2: '',
+						depth3: '',
+						path: 'page2.html',
+						status: 'end',
+						create: '',
+						log: [/*{ date: '2023.04.06', text: '반응형 작업중' }*/],
+					},
+					{
+						id:'',
+						depth1: '인증완료',
+						depth2: '',
+						depth3: '',
+						path: 'page3.html',
+						status: 'end',
+						create: '',
+						log: [/*{ date: '2023.04.06', text: '반응형 작업중' }*/],
+					},
+					{
+						id:'',
+						depth1: '출석체크완료',
+						depth2: '',
+						depth3: '',
+						path: 'page4.html',
+						status: 'end',
+						create: '',
+						log: [/*{ date: '2023.04.06', text: '반응형 작업중' }*/],
+					},
+					{
+						id:'',
+						depth1: '중도퇴실',
+						depth2: '',
+						depth3: '',
+						path: 'page5.html',
+						status: 'end',
+						create: '',
+						log: [/*{ date: '2023.04.06', text: '반응형 작업중' }*/],
+					},
+					{
+						id:'',
+						depth1: '평가홈',
+						depth2: '',
+						depth3: '',
+						path: 'page6.html',
+						status: 'end',
+						create: '',
+						log: [/*{ date: '2023.04.06', text: '반응형 작업중' }*/],
+					},
+					{
+						id:'',
+						depth1: '만족도평가',
+						depth2: '필수',
+						depth3: '',
+						path: 'page7.html',
+						status: 'end',
+						create: '',
+						log: [/*{ date: '2023.04.06', text: '반응형 작업중' }*/],
+					},
+					{
+						id:'',
+						depth1: '시험평가',
+						depth2: '',
+						depth3: '',
+						path: 'page8.html',
+						status: 'end',
+						create: '',
+						log: [/*{ date: '2023.04.06', text: '반응형 작업중' }*/],
+					},
+					{
+						id:'',
+						depth1: '평가점수',
+						depth2: '60점 이상',
+						depth3: '',
+						path: 'page9.html',
+						status: 'end',
+						create: '',
+						log: [/*{ date: '2023.04.06', text: '반응형 작업중' }*/],
+					},
+					{
+						id:'',
+						depth1: '평가점수',
+						depth2: '60점 이하',
+						depth3: '',
+						path: 'page9-2.html',
+						status: 'end',
+						create: '',
+						log: [/*{ date: '2023.04.06', text: '반응형 작업중' }*/],
+					},
+					{
+						id:'',
+						depth1: '평가완료',
+						depth2: '',
+						depth3: '',
+						path: 'page10.html',
+						status: 'end',
+						create: '',
+						log: [/*{ date: '2023.04.06', text: '반응형 작업중' }*/],
+					},
+				]
+			},
+		
+		];
+
+		var html = '';
+		var navHTML = '';
+		var totalIndex = 0;
+		var dates = (function () {
+		var array = [];
+
+		function add(date) {
+			if (typeof date === 'string' && date.length && array.indexOf(date) === -1) {
+			array.push(date);
+			}
+		}
+
+		$.each(tableData, function (i) {
+			var sectionData = tableData[i].data;
+			$.each(sectionData, function (j) {
+			add(this.create);
+			$.each(sectionData[j].log, function (l) {
+				add(this.date);
+			});
+			});
+		});
+
+		array.sort();
+
+		return array;
+		})();
+		var latestDate = dates[dates.length - 1];
+
+		$.each(tableData, function (i) {
+		var sectionIndex = i;
+		var sectionData = tableData[i].data;
+		var tableHTML = '';
+
+		$.each(sectionData, function (j) {
+			var returnVal = function (key, secondTestKey) {
+			var val = sectionData[j][key];
+			var secondTestVal = sectionData[j][secondTestKey];
+			var prevIndex = j - 1;
+			var isPrint = true;
+			if (prevIndex >= 0) {
+				if (sectionData[prevIndex][key] === val) {
+				isPrint = false;
+				}
+				if (typeof secondTestKey === 'string' && secondTestKey.length && !sectionData[j].depthOnly) {
+				if (sectionData[prevIndex][key] === val && sectionData[prevIndex][secondTestKey] === secondTestVal) {
+					isPrint = false;
+				} else {
+					isPrint = true;
+				}
+				}
+			}
+			return isPrint ? val.replace(/\n/g, '<br>') : '';
+			};
+			//var type = returnVal('type', 'depth2');
+			var id = returnVal('id');
+			var depth1 = returnVal('depth1');
+			var depth2 = returnVal('depth2');
+			var depth3 = returnVal('depth3');
+			var path = (function () {
+			var val = sectionData[j].path;
+			var href = '';
+			if (val.match(/^\.\//g)) {
+				href = val;
+			} else {
+				href =  val;
+			}
+			return val.length ? '<span class="path-preview-wrapper"><a href="' + href + '" target="_blank" data-preview-path="' + href + '">' + val + '</a><div class="path-preview-tooltip" data-tooltip-path="' + href + '"><div class="path-preview-tooltip__container"><div class="path-preview-tooltip__loading">로딩 중...</div><iframe src="' + href + '"></iframe></div></div></span>' : '';
+			})();
+			var status = (function () {
+			var val = sectionData[j].status;
+			var text = '';
+			if (val === 'ing') {
+				text = '작업중';
+			} else if (val === 'end') {
+				text = '작업완료';
+			} else if (val === 'except') {
+				// 워드앤코드 제거
+				text = '제거';
+			} else if (val === 'moding') {
+				text = '수정중';
+			} else if (val === 'stay') {
+				text = '대기중';
+			}
+			return val.length ? '<span class="index-status index-status--' + val + '">' + text + '</span>' : '';
+			})();
+			var create = this.create;
+			var update = '';
+			var log = (function () {
+			var val = sectionData[j].log;
+			var length = val.length;
+			var html = '<ul class="index-log">';
+			$.each(val, function (l) {
+				var date = this.date;
+				html += '<li class="index-log__item' + (date === latestDate ? ' is-emphasis' : '') + '"><div class="index-log__item__date">[' + date + ']</div>' + this.text.replace(/\n/g, '<br>') + '</li>';
+				if (length - 1 === l) {
+				update = date;
+				}
+			});
+			html += '</ul>';
+
+			return html;
+			})();
+
+			tableHTML +=
+			'<tr>' +
+			'<td>' +
+			(j + 1) +
+			'</td>' +
+			'<td>' +
+			id +
+			'</td>' +
+			'<td>' +
+			depth1 +
+			'</td>' +
+			'<td>' +
+			depth2 +
+			'</td>' +
+			'<td>' +
+			depth3 +
+			'</td>' +
+			'<td>' +
+			path +
+			'</td>' +
+			'<td>' +
+			status +
+			'</td>' +
+			'<td class="' +
+			(create === latestDate ? ' is-emphasis' : '') +
+			'">' +
+			create +
+			'</td>' +
+			'<td class="' +
+			(update === latestDate ? ' is-emphasis' : '') +
+			'">' +
+			update +
+			'</td>' +
+			'<td>' +
+			log +
+			'</td>' +
+			'</tr>';
+
+			totalIndex++;
+		});
+
+		navHTML += '<a href="#section' + i + '">' + tableData[i].depth1 + '</a>';
+
+		html +=
+			'<div class="index-section" id="section' +
+			i +
+			'">' +
+			'<h2 class="index-section__title">' +
+			tableData[i].depth1 +
+			status +
+			'</h2>' +
+			'<div class="index-table">' +
+			'<table>' +
+			'<colgroup>' +
+			'<col width="50px" />' +
+			'<col width="70px" />' +
+			'<col width="170px" />' +
+			'<col width="170px" />' +
+			'<col width="170px" />' +
+			'<col width="" />' +
+			'<col width="100px" />' +
+			'<col width="110px" />' +
+			'<col width="110px" />' +
+			'<col width="300px" />' +
+			'</colgroup>' +
+			'<thead>' +
+			'<tr>' +
+			'<th>No</th>' +
+			//'<th>type</th>' +
+			'<th>id</th>' +
+			'<th>depth1</th>' +
+			'<th>depth2</th>' +
+			'<th>depth3</th>' +
+			'<th>path</th>' +
+			'<th>status</th>' +
+			'<th>create</th>' +
+			'<th>update</th>' +
+			'<th>log</th>' +
+			'</tr>' +
+			'</thead>' +
+			'<tbody>' +
+			tableHTML +
+			'</tbody>' +
+			'</table>' +
+			'</div>' +
+			'</div>';
+		});
+
+		$('title, .index-title').text(title);
+		$('#nav').append(navHTML);
+		$('#indexTable').append(html);
+
+		var $nav = $('.index-bottom');
+		var $doc = $(document);
+		var $win = $(window);
+
+		function paddingBottom() {
+		$('.index-fake-botttom').css('height', $nav.outerHeight());
+		}
+
+		var clickedTimer = null;
+
+		$doc.on('click', '#nav a', function () {
+		var $this = $(this);
+		var href = $this.attr('href');
+		var $target = $(href);
+		var $sections = $('.index-section');
+
+		$sections.removeClass('index-section--clicked');
+
+		clearTimeout(clickedTimer);
+
+		clickedTimer = setTimeout(function () {
+			$target.addClass('index-section--clicked');
+		}, 100);
+		});
+
+		$win
+		.on('scroll', function () {
+			var scrollLeft = $win.scrollLeft();
+			$nav.css('margin-left', -scrollLeft);
+		})
+		.on('resize', function () {
+			paddingBottom();
+		})
+		.on('load', function () {
+			paddingBottom();
+		});
+
+		// Path Preview Tooltip 기능
+		$(document).on('mouseenter', '.path-preview-wrapper a[data-preview-path]', function(e) {
+			var $this = $(this);
+			var $tooltip = $this.siblings('.path-preview-tooltip');
+			
+			if ($tooltip.length === 0) return;
+			
+			$tooltip.addClass('active');
+			
+			// iframe 로딩 완료 후 로딩 메시지 제거
+			var $iframe = $tooltip.find('iframe');
+			$iframe.on('load', function() {
+				$tooltip.find('.path-preview-tooltip__loading').hide();
+			});
+		});
+
+		$(document).on('mouseleave', '.path-preview-wrapper', function(e) {
+			var $this = $(this);
+			var $tooltip = $this.find('.path-preview-tooltip');
+			$tooltip.removeClass('active');
+		});
+
+		// 마우스가 툴팁 위에 있을 때도 유지
+		$(document).on('mouseenter', '.path-preview-tooltip', function(e) {
+			$(this).addClass('active');
+		});
+
+		$(document).on('mouseleave', '.path-preview-tooltip', function(e) {
+			$(this).removeClass('active');
+		});
+	</script>
+	<!-- //script -->
+</body>
+</html>
